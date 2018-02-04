@@ -1,0 +1,11 @@
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\bin\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.deps.json
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\bin\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.runtimeconfig.json
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\bin\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.runtimeconfig.dev.json
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\bin\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.dll
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\bin\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.pdb
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.csprojResolveAssemblyReference.cache
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.csproj.CoreCompileInputs.cache
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.AssemblyInfoInputs.cache
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.AssemblyInfo.cs
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.dll
+G:\MVC Websites\ShahbazWebsite_MVCPlatform\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.pdb
