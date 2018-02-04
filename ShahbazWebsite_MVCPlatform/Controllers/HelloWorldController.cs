@@ -21,7 +21,7 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
         public string Welcome()
         {
-            return "This is the Welcome action method!";
+            return "This is the Welcome action method...";
         }
 
         public string WelcomeAgain(string name, int numTimes = 1)
