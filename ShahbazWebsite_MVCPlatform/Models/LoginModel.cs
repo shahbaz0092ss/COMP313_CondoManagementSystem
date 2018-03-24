@@ -1,3 +1,5 @@
+// THIS MODEL USED FOR: Passing data from View:Login to Controller: Login
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
