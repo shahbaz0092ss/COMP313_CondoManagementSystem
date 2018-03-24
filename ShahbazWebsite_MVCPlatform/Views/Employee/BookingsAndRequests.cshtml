@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "";
+}
+
+
+<br />
+<h2>Bookings And Requests</h2>
+
+@*Dummy data below:
+Next: List coming from DB*@
+
+<table>
+
+
+    <tr>
+        <td><strong>USERNAME</strong></td>
+        <td><strong>BOOKING ID</strong></td>
+        <td><strong>REQUEST/BOOKING TYPE</strong></td>
+        <td><strong>DURATION</strong></td>
+        <td><strong>STATUS</strong></td>
+
+    </tr>
+
+    <tr>
+        <td>John Smith</td>
+        <td>012345</td>
+        <td>Parking </td>
+        <td>3 days</td>
+        <td>pending</td>
+        <td><a asp-area="" asp-controller="Employee" asp-action="ApproveRequest">Approve</a></td>
+        <td><a asp-area="" asp-controller="Employee" asp-action="DeclineRequest">Decline</a></td>
+    </tr>
+
+    <tr>
+        <td>Jimmy Singh</td>
+        <td>012567</td>
+        <td>Party Hall</td>
+        <td>2 days</td>
+        <td>pending</td>
+        <td><a asp-area="" asp-controller="Employee" asp-action="ApproveRequest">Approve</a></td>
+        <td><a asp-area="" asp-controller="Employee" asp-action="DeclineRequest">Decline</a></td>
+    </tr>
+</table>
