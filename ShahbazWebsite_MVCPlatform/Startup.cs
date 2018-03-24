@@ -41,9 +41,22 @@ namespace ShahbazWebsite_MVCPlatform
 
             app.UseMvc(routes =>
             {
+       
+                // Default route setup by Visual Studio:
+                // Controller:Home, Action:Index
+
+                //    routes.MapRoute(
+                //    name: "default",
+                //    template: "{controller=Home}/{action=Index}/{id?}");
+
+
+                // NEW default route for our app:
+                // Controller:Login, Action:Login
+
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Login}/{action=Login}");
+
             });
         }
     }
