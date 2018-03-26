@@ -1,1 +1,1 @@
-# COMP313_CondoManagementSystem
+# CondoManagementSystem - COMP 313

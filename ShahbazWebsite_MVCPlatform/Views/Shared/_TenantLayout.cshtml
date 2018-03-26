@@ -1,8 +1,4 @@
-﻿
-@*This layout is used by Views in Employee and Reporting folders
-
-    BOOTSTRAP - Multiple navbars:
-    https://stackoverflow.com/questions/21616381/multiple-fixed-top-navbar-headers-in-twitter-bootstrap-3*@
+@*This layout is used by Views in Employee and Reporting folders*@
 
 <!DOCTYPE html>
 <html>
@@ -10,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>@ViewData["Title"] - Employee</title>
+    <title>@ViewData["Title"] - Tenant</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -27,7 +23,7 @@
 
     <div class="divide-nav">
         <div class="container">
-            <p class="divide-text">Employee Actions: </p>
+            <p class="divide-text">Tenant Actions: </p>
         </div>
     </div>
 
@@ -46,34 +42,17 @@
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Employee" asp-action="AddRemoveUsers">1. Add/Remove Users</a></li>
-                    <li><a asp-area="" asp-controller="Employee" asp-action="BookingsAndRequests">2. Bookings & Requests</a></li>
-                    <li><a asp-area="" asp-controller="Employee" asp-action="MaintenanceRequests">3. Maintenance Requests</a></li>
-                    <li><a asp-area="" asp-controller="Login" asp-action="LogoutPerformed">4. Logout</a></li>
+                    <li><a asp-area="" asp-controller="Tenant" asp-action="RequestsAndBookings">1. Make Requests & Bookings</a></li>
+                    <li><a asp-area="" asp-controller="Tenant" asp-action="MaintenanceRequests">2. Maintenance Requests </a></li>
+                    <li><a asp-area="" asp-controller="Tenant" asp-action="WebPayment">3. Payment</a></li>
+                    <li><a asp-area="" asp-controller="Tenant" asp-action="PasswordReset">4. Change Password</a></li>
+                    <li><a asp-area="" asp-controller="Login" asp-action="LogoutPerformed">5. Logout</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="divide-nav">
-        <div class="container">
-            <p class="divide-text">Reports: </p>
-        </div>
-    </div>
 
-    <nav class="navbar navbar-default navbar-lower" role="navigation">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_DailyRequestsAndBookings">1. Daily Requests & Bookings</a></li>
-                    <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_Maintenance">2. Maintenance</a></li>
-                    <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_TenantSearchDetails">3. Tenant Search & Details</a></li>
-                    <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_WebPayments">4. Web Payments</a></li>
-                    <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_AggregateData">5. Aggregate data</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
     <div class="container body-content">
         @RenderBody()
