@@ -20,3 +20,14 @@ C:\Users\Mudrak\semesterWork\Programs\Comp313CondoManagementFolder\COMP313_Condo
 C:\Users\Mudrak\semesterWork\Programs\Comp313CondoManagementFolder\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.AssemblyInfo.cs
 C:\Users\Mudrak\semesterWork\Programs\Comp313CondoManagementFolder\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.dll
 C:\Users\Mudrak\semesterWork\Programs\Comp313CondoManagementFolder\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.pdb
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\bin\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.deps.json
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\bin\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.runtimeconfig.json
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\bin\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.runtimeconfig.dev.json
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\bin\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.dll
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\bin\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.pdb
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.csprojResolveAssemblyReference.cache
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.csproj.CoreCompileInputs.cache
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.AssemblyInfoInputs.cache
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.AssemblyInfo.cs
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.dll
+C:\Users\User1\Desktop\ASP.NET MVC\COMP313_CondoManagementSystem\ShahbazWebsite_MVCPlatform\obj\Debug\netcoreapp2.0\ShahbazWebsite_MVCPlatform.pdb

@@ -1,0 +1,28 @@
+
+@{
+    ViewData["Title"] = "Requests And Bookings";
+    Layout = "~/Views/Shared/_TenantLayout.cshtml";
+}
+
+<br />
+<h2>What do you wish to Request or Book?</h2>
+<br />
+
+<form method="post" action="Tenant/MakeBooking">
+    <select>
+        <option>Parking</option>
+        <option>Party Hall</option>
+        <option>Library room</option>
+    </select>
+    <br />
+    Date: <input type="text" name="date">
+    <br />
+    (Time) From <input type="text" name="timeFrom">
+    (Time) To <input type="text" name="timeTo">
+    <br />
+    Please fill all other detail:
+    <textarea id="bookingDetail">
+    </textarea>
+    <br />
+    <input type="submit" value="submit">
+</form>

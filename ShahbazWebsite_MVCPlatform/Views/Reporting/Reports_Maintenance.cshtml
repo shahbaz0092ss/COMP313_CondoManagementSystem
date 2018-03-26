@@ -1,0 +1,74 @@
+
+@{
+    ViewData["Title"] = "Reports - Maintenance";
+}
+
+@*Dummy data below:
+  Next: List coming from DB*@
+
+<h4>
+    User Story
+</h4>
+
+<h2>
+    2. Management staff can see all maintenance work-related data. Work completed and dollar
+    amounts
+</h2>
+
+<br />
+<br />
+
+<p style="background-color:rgb(0, 102, 102); color:white"><strong>SELECT PERIOD:</strong>&nbsp;&nbsp;&nbsp;</p>
+<input id="Text1" type="text" value="Enter Date range here" />
+<input id="Submit1" type="submit" value="Refresh" />
+
+
+<br />
+<br />
+<br />
+
+
+<div style="color:rgb(0, 102, 102)"><strong>MAINTENANCE - ALL RECORDS (PENDING AND COMPLETED) WITH DOLLAR AMOUNTS</strong></div>
+
+<!--Line, yellow colored-->
+<div style="width: 825px; height: 5px; border-bottom: 4px solid rgb(255, 233, 26); position: absolute"></div>
+
+<br />
+<br />
+
+<table style="width: 100%; height: 122px; border: 2px solid white">
+
+    <tr style="background-color:rgb(0, 102, 102)">
+        <td style="color:white; border: 2px solid white"><strong>Username</strong></td>
+        <td style="color:white; border: 2px solid white"><strong>Maintenance ID</strong></td>
+        <td style="color:white; border: 2px solid white"><strong>Maintenance Type</strong></td>
+        <td style="color:white; border: 2px solid white"><strong>Date started</strong></td>
+        <td style="color:white; border: 2px solid white"><strong>Date completed</strong></td>
+        <td style="color:white; border: 2px solid white"><strong>Status</strong></td>
+        <td style="color:white; border: 2px solid white"><strong>Note (from staff)</strong></td>
+        <td style="color:white; border: 2px solid white"><strong>Dollar amount</strong></td>
+
+    </tr>
+    <tr style="background-color: rgb(229,234,238)">
+        <td style="border: 2px solid white">Glenn McGrath</td>
+        <td style="border: 2px solid white">012678</td>
+        <td style="border: 2px solid white">Repair</td>
+        <td style="border: 2px solid white">March 1 2018</td>
+        <td style="border: 2px solid white">March 12 2018</td>
+        <td style="border: 2px solid white">completed</td>
+        <td style="border: 2px solid white">Fridge repair. Receipt #4234432 from Mr. Handyman Corp.</td>
+        <td style="border: 2px solid white">$ 224</td>
+    </tr>
+    <tr style="background-color: rgb(229,234,238)">
+        <td style="border: 2px solid white">Brett Lee</td>
+        <td style="border: 2px solid white">012699</td>
+        <td style="border: 2px solid white">Repair</td>
+        <td style="border: 2px solid white">March 10 2018</td>
+        <td style="border: 2px solid white">&nbsp;</td>
+        <td style="border: 2px solid white">waiting for visit from serviceman</td>
+        <td style="border: 2px solid white">Lights repair in Washroom. Called the repair man. Service scheduled for March 12 2018. </td>
+        <td style="border: 2px solid white">&nbsp;</td>
+
+    </tr>
+</table>
+
