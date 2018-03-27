@@ -12,9 +12,9 @@ namespace ShahbazWebsite_MVCPlatform.Models
 
     {
 
-        public int BookingId { get; set; }
+        public int BookingID { get; set; }
 
-        public int? UserId { get; set; }
+        public int? UserID { get; set; }
 
         public string Category { get; set; }
 

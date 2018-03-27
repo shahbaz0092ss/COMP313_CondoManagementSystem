@@ -26,7 +26,7 @@ namespace ShahbazWebsite_MVCPlatform.Models
 
 
 
-        public int UserId { get; set; }
+        public int UserID { get; set; }
 
         public string FirstName { get; set; }
 

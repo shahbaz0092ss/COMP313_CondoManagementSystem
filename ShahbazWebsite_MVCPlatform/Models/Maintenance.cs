@@ -13,9 +13,9 @@ namespace ShahbazWebsite_MVCPlatform.Models
 
     {
 
-        public int MaintenanceId { get; set; }
+        public int MaintenanceID { get; set; }
 
-        public int? UserId { get; set; }
+        public int? UserID { get; set; }
 
         public string Category { get; set; }
 
