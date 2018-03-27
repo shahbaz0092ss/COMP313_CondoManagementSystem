@@ -3,10 +3,13 @@
     "",
     "\\ShahbazWebsite_MVCPlatform",
     "\\ShahbazWebsite_MVCPlatform\\Controllers",
+    "\\ShahbazWebsite_MVCPlatform\\Models",
     "\\ShahbazWebsite_MVCPlatform\\Views",
-    "\\ShahbazWebsite_MVCPlatform\\Views\\HelloWorld",
-    "\\ShahbazWebsite_MVCPlatform\\Views\\Home",
-    "\\ShahbazWebsite_MVCPlatform\\Views\\Shared"
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Employee",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Login",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Reporting",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Shared",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Tenant"
   ],
   "PreviewInSolutionExplorer": false
 }
