@@ -1,8 +1,20 @@
 
+@using Microsoft.AspNetCore.Http
+
+
 @{
     ViewData["Title"] = "Tenant Home Page";
     Layout = "~/Views/Shared/_TenantLayout.cshtml";
 }
 
+<br />
 
-<h2> Welcome Tenant</h2>
+<h2>Welcome! Bonjour!</h2>
+
+<br />
+<br />
+
+<h1>
+    Logged in as:
+    @Context.Session.GetString("_Name")
+</h1>

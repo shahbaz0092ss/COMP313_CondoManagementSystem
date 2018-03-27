@@ -1,9 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ShahbazWebsite_MVCPlatform.Models;
+using Microsoft.AspNetCore.Http;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,8 +18,9 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         // https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing
 
 
-        // DEFAULT PAGE FOR WEB APP, IN CONFIG SETTINGS.
-        // GET: http://localhost:port/login
+        // DEFAULT PAGE FOR WEB APP, route set in Startup.cs
+
+        // GET: http://localhost:port/
         // Coming in from browser world
         [HttpGet]
         public IActionResult Login()
@@ -62,7 +65,22 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
                 // Then set state and allow login as Employee
                 // Send to Employee controller
 
+                
+                // TempData used by other controllers for checking logged in state.
+                // NEXT: Switch to Session.
                 TempData["EmployeeLogin"] = "True";
+
+
+                //Session set: Username. So we can display it later in views.
+
+                var Login_UserName = "Employee";
+                const string SessionUserNameKey = "_Name";
+
+                HttpContext.Session.SetString(SessionUserNameKey, Login_UserName);
+
+
+                // Take to View:Index, in Controller:Employee
+
                 return RedirectToAction("Index", "Employee");
             }
 
@@ -77,6 +95,16 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
                 // Send to Action -> Index() in Controller -> Tenant
 
                 TempData["TenantLogin"] = "True";
+
+                 //Session set: Username. So we can display it later in views.
+
+                var Login_UserName = "Tenant";
+                const string SessionUserNameKey = "_Name";
+                HttpContext.Session.SetString(SessionUserNameKey, Login_UserName);
+
+
+
+
                 return RedirectToAction("Index", "Tenant");
             }
 
@@ -98,8 +126,17 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         {
             // Sign out of web app.
             // Remove state
-            TempData.Remove("EmployeeLogin");
 
+            if (TempData.ContainsKey("EmployeeLogin"))
+                {
+                 TempData.Remove("EmployeeLogin");
+                }
+
+            if (TempData.ContainsKey("TenantLogin"))
+            {
+                 TempData.Remove("TenantLogin");
+            }
+           
 
             // Send to login.
             return RedirectToAction("Login", "Login");

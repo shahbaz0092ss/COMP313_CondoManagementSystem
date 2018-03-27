@@ -1,6 +1,19 @@
+@using Microsoft.AspNetCore.Http
+
+
 @{
     ViewData["Title"] = "Employee Home Page";
 }
 
+
 <br />
+
 <h2>Employee Area</h2>
+
+<br />
+<br />
+
+<h1>
+    Logged in as:
+    @Context.Session.GetString("_Name")
+</h1>
