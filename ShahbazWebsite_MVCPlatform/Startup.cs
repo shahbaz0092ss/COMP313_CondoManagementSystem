@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,6 +8,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+// For EF:
+using Microsoft.EntityFrameworkCore;
+using ShahbazWebsite_MVCPlatform.Models;
+
 
 namespace ShahbazWebsite_MVCPlatform
 {
@@ -26,10 +32,16 @@ namespace ShahbazWebsite_MVCPlatform
             // > "In ASP.NET Core 2.0 and later, the cookie-based TempData provider is used by default to store TempData in cookies."
             // Via: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/app-state
 
-            services.AddMvc()
+                services.AddMvc()
                  .AddSessionStateTempDataProvider();
 
-            services.AddSession();
+              services.AddSession();
+
+            // Adding: DB Context to be registered and used throughout web app
+
+             var connection = @"Server=Provider=SQLNCLI11.1;Data Source=tcp:comp313mvcdatabaseserver.database.windows.net;User ID=mudrak;Initial Catalog=comp313MVCDatabase;Password=Password@123";
+             
+             services.AddDbContext<comp313MVCDatabaseContext>(options => options.UseSqlServer(connection));
 
         }
 
