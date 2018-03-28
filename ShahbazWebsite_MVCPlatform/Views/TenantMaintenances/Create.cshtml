@@ -1,5 +1,6 @@
 
-@model ShahbazWebsite_MVCPlatform.Models.Booking
+@model ShahbazWebsite_MVCPlatform.Models.Maintenance
+
 
 @{
     ViewData["Title"] = "Create";
@@ -8,7 +9,7 @@
 
 <h2>Create</h2>
 
-<h4>Booking</h4>
+<h4>Maintenance</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,35 +21,35 @@
             </div>
             <div class="form-group">
                 <label asp-for="Category" class="control-label"></label>
-                (Parking / Guest Parking / Party Hall / Etc.)
+                (Repair / Cleaning / Etc.)
                 <input asp-for="Category" class="form-control" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
-                (for)
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TimeFrom" class="control-label"></label>
-                <input asp-for="TimeFrom" class="form-control" />
-                <span asp-validation-for="TimeFrom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TimeTo" class="control-label"></label>
-                <input asp-for="TimeTo" class="form-control" />
-                <span asp-validation-for="TimeTo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BookingDetail" class="control-label"></label>
-                <input asp-for="BookingDetail" class="form-control" />
-                <span asp-validation-for="BookingDetail" class="text-danger"></span>
+                <label asp-for="MaintenanceDetail" class="control-label"></label>
+                (Please keep under 25 chars for now, or else deal with Errors page)
+                <input asp-for="MaintenanceDetail" class="form-control" />
+                <span asp-validation-for="MaintenanceDetail" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
                 <input asp-for="Status" class="form-control" readonly="readonly"/>
                 <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DollarAmount" class="control-label"></label>
+                <input asp-for="DollarAmount" class="form-control" readonly="readonly"/>
+                <span asp-validation-for="DollarAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label"></label>
+                <input asp-for="Note" class="form-control" readonly="readonly"/>
+                <span asp-validation-for="Note" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
