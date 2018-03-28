@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ShahbazWebsite_MVCPlatform",
+    "\\ShahbazWebsite_MVCPlatform\\Controllers",
+    "\\ShahbazWebsite_MVCPlatform\\Views"
   ],
   "PreviewInSolutionExplorer": false
 }
