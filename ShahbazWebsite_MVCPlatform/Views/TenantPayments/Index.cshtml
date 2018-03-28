@@ -1,0 +1,56 @@
+
+
+@model IEnumerable<ShahbazWebsite_MVCPlatform.Models.Payment>
+
+    @{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TenantLayout.cshtml";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        <a asp-action="Create">Make New Payment</a>
+    </p>
+
+    <h1> Previous payments:</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PaymentId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AmountPaid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TypeOfPayment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserId)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountPaid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeOfPayment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+            </tr>
+}
+        </tbody>
+    </table>
+
