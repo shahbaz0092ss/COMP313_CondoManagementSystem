@@ -30,6 +30,7 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
             }
         }
 
+        // List
         public IActionResult AddRemoveUsers()
         {
             // Login check
@@ -37,7 +38,6 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
             if (TempData.ContainsKey(key: "EmployeeLogin"))
             {
-                ViewData["Message"] = "Your application description page.";
 
                 return View();
             }
@@ -49,6 +49,57 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
             }
 
         }
+
+        // Add to DB - Performs individual user addition 
+
+        public IActionResult AddUser(User user )
+
+            {
+
+
+
+             // Login check
+
+            // If logged in, continue
+
+
+
+            if (TempData.ContainsKey(key: "EmployeeLogin"))
+
+            {
+
+             
+
+
+
+                // To display the message on screen after adding:
+
+                // TempData["Message"] = "User: " + UserModel.FirstName + " has been added to system.";
+
+                // Also, show TempData's Message in view.
+
+                
+                // Take back
+                return RedirectToAction("AddRemoveUsers", "Employee");
+
+            }
+
+              else
+
+            {
+
+                // Take to Login page
+
+                // Login action, in Login controller
+
+                return RedirectToAction("Login", "Login");
+
+            }
+
+             
+
+            }
+
 
         public IActionResult BookingsAndRequests()
         {
