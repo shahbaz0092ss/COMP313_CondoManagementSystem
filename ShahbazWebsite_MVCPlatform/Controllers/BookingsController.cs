@@ -1,6 +1,4 @@
 
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,22 +10,23 @@ using ShahbazWebsite_MVCPlatform.Models;
 
 namespace ShahbazWebsite_MVCPlatform.Controllers
 {
-    public class UsersController : Controller
+    public class BookingsController : Controller
     {
         private readonly comp313MVCDatabaseContext _context;
 
-        public UsersController(comp313MVCDatabaseContext context)
+        public BookingsController(comp313MVCDatabaseContext context)
         {
             _context = context;
         }
 
-        // GET: Users
+        // GET: Bookings
         public async Task<IActionResult> Index()
         {
-            return View(await _context.User.ToListAsync());
+            var comp313MVCDatabaseContext = _context.Booking.Include(b => b.User);
+            return View(await comp313MVCDatabaseContext.ToListAsync());
         }
 
-        // GET: Users/Details/5
+        // GET: Bookings/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,39 +34,42 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
                 return NotFound();
             }
 
-            var user = await _context.User
-                .SingleOrDefaultAsync(m => m.UserId == id);
-            if (user == null)
+            var booking = await _context.Booking
+                .Include(b => b.User)
+                .SingleOrDefaultAsync(m => m.BookingId == id);
+            if (booking == null)
             {
                 return NotFound();
             }
 
-            return View(user);
+            return View(booking);
         }
 
-        // GET: Users/Create
+        // GET: Bookings/Create
         public IActionResult Create()
         {
+            ViewData["UserId"] = new SelectList(_context.User, "UserId", "UserId");
             return View();
         }
 
-        // POST: Users/Create
+        // POST: Bookings/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,FirstName,LastName,Email,PhoneNumber,ApartmentNumber,UserType,Password")] User user)
+        public async Task<IActionResult> Create([Bind("BookingId,UserId,Category,Date,TimeFrom,TimeTo,BookingDetail,Status")] Booking booking)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(user);
+                _context.Add(booking);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(user);
+            ViewData["UserId"] = new SelectList(_context.User, "UserId", "UserId", booking.UserId);
+            return View(booking);
         }
 
-        // GET: Users/Edit/5
+        // GET: Bookings/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +77,23 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
                 return NotFound();
             }
 
-            var user = await _context.User.SingleOrDefaultAsync(m => m.UserId == id);
-            if (user == null)
+            var booking = await _context.Booking.SingleOrDefaultAsync(m => m.BookingId == id);
+            if (booking == null)
             {
                 return NotFound();
             }
-            return View(user);
+            ViewData["UserId"] = new SelectList(_context.User, "UserId", "UserId", booking.UserId);
+            return View(booking);
         }
 
-        // POST: Users/Edit/5
+        // POST: Bookings/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserId,FirstName,LastName,Email,PhoneNumber,ApartmentNumber,UserType,Password")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("BookingId,UserId,Category,Date,TimeFrom,TimeTo,BookingDetail,Status")] Booking booking)
         {
-            if (id != user.UserId)
+            if (id != booking.BookingId)
             {
                 return NotFound();
             }
@@ -99,12 +102,12 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
             {
                 try
                 {
-                    _context.Update(user);
+                    _context.Update(booking);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UserExists(user.UserId))
+                    if (!BookingExists(booking.BookingId))
                     {
                         return NotFound();
                     }
@@ -115,10 +118,11 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(user);
+            ViewData["UserId"] = new SelectList(_context.User, "UserId", "UserId", booking.UserId);
+            return View(booking);
         }
 
-        // GET: Users/Delete/5
+        // GET: Bookings/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,30 +130,31 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
                 return NotFound();
             }
 
-            var user = await _context.User
-                .SingleOrDefaultAsync(m => m.UserId == id);
-            if (user == null)
+            var booking = await _context.Booking
+                .Include(b => b.User)
+                .SingleOrDefaultAsync(m => m.BookingId == id);
+            if (booking == null)
             {
                 return NotFound();
             }
 
-            return View(user);
+            return View(booking);
         }
 
-        // POST: Users/Delete/5
+        // POST: Bookings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var user = await _context.User.SingleOrDefaultAsync(m => m.UserId == id);
-            _context.User.Remove(user);
+            var booking = await _context.Booking.SingleOrDefaultAsync(m => m.BookingId == id);
+            _context.Booking.Remove(booking);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UserExists(int id)
+        private bool BookingExists(int id)
         {
-            return _context.User.Any(e => e.UserId == id);
+            return _context.Booking.Any(e => e.BookingId == id);
         }
     }
 }
