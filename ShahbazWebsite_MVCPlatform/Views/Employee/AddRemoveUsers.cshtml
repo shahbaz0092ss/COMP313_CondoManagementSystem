@@ -1,27 +1,63 @@
 @{
-    ViewData["Title"] = "";
+    ViewData["Title"] = "Employee - Add Users";
 }
 
+@model ShahbazWebsite_MVCPlatform.Models.User
 
 <br />
-<h2>Add/Remove Users </h2>
+<h2>Add Users  (non-functional) </h2>
 
 
-<form method="post" action="Employee/AddUser">
-    Username: <input type="text" name="username">
+<form asp-action="AddUser" asp-controller="Employee">
+
+    <label asp-for="UserId"></label>
+
+    <input asp-for="UserId" placeholder="UserId goes here" />
+
     <br />
-    Password: <input type="text" name="password">
+
+    <label asp-for="FirstName"></label>
+
+    <input asp-for="FirstName" placeholder="FirstName goes here" />
+
     <br />
-    Password confirm: <input type="text" name="passwordConfirm">
+
+    <label asp-for="LastName"></label>
+
+    <input asp-for="LastName" placeholder="LastName goes here" />
+
     <br />
-    Full name: <input type="text" name="fullName">
+
+    <label asp-for="Email"></label>
+
+    <input asp-for="Email" placeholder="Email goes here" />
+
     <br />
-    Email: <input type="text" name="email">
+
+    <label asp-for="PhoneNumber"></label>
+
+    <input asp-for="PhoneNumber" placeholder="PhoneNumber goes here" />
+
     <br />
-    Phone #: <input type="text" name="phoneNumber">
+
+    <label asp-for="ApartmentNumber"></label>
+
+    <input asp-for="ApartmentNumber" placeholder="ApartmentNumber goes here" />
+
     <br />
-    Condo unit #: <input type="text" name="condoUnitNumber">
+
+    <label asp-for="UserType"></label>
+
+    <input asp-for="UserType" placeholder="UserType goes here" />
+
     <br />
-    Sex: <input type="text" name="sex">
-    <input type="submit" value="submit">
+
+    <label asp-for="Password"></label>
+
+    <input asp-for="Password" placeholder="Password goes here" />
+
+    <br />
+
+    <input type="submit" value="AddUser" />
+
 </form>
