@@ -3,7 +3,11 @@
     "",
     "\\ShahbazWebsite_MVCPlatform",
     "\\ShahbazWebsite_MVCPlatform\\Controllers",
-    "\\ShahbazWebsite_MVCPlatform\\Views"
+    "\\ShahbazWebsite_MVCPlatform\\Models",
+    "\\ShahbazWebsite_MVCPlatform\\Views",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Shared",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\TenantBookings"
   ],
+  "SelectedNode": "\\ShahbazWebsite_MVCPlatform\\Controllers\\TenantController.cs",
   "PreviewInSolutionExplorer": false
 }

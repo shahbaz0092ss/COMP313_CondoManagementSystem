@@ -1,0 +1,67 @@
+@model IEnumerable<ShahbazWebsite_MVCPlatform.Models.Booking>
+
+    @{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TenantLayout.cshtml";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+
+    <br />
+
+    <h1>Previous:</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                    (Type of request)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeFrom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeTo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingDetail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeFrom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeTo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingDetail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
