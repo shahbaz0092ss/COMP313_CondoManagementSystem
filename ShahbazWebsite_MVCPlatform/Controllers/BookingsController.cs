@@ -19,7 +19,7 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
             _context = context;
         }
 
-        // GET: Bookings
+        // GET: Bookings - Show All
         public async Task<IActionResult> Index()
         {
             var comp313MVCDatabaseContext = _context.Booking.Include(b => b.User);
