@@ -48,53 +48,27 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
         public IActionResult Reports_TenantSearchDetails()
         {
-            if (TempData.ContainsKey(key: "EmployeeLogin"))
-            {
 
 
                 return View();
 
-            }
-            else
-            {
-                // Take to Login page
-                // Login action, in Login controller
-                return RedirectToAction("Login", "Login");
-            }
+            
         }
 
         public IActionResult Reports_WebPayments()
         {
-            if (TempData.ContainsKey(key: "EmployeeLogin"))
-            {
+
 
 
                 return View();
-
-            }
-            else
-            {
-                // Take to Login page
-                // Login action, in Login controller
-                return RedirectToAction("Login", "Login");
-            }
+          
         }
 
         public IActionResult Reports_AggregateData()
         {
-            if (TempData.ContainsKey(key: "EmployeeLogin"))
-            {
 
 
                 return View();
-
-            }
-            else
-            {
-                // Take to Login page
-                // Login action, in Login controller
-                return RedirectToAction("Login", "Login");
-            }
         }
 
         // WebPayments
