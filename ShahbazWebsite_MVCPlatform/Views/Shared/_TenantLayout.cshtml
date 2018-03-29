@@ -21,37 +21,26 @@
 </head>
 <body>
 
-    <div class="divide-nav">
-        <div class="container">
-            <p class="divide-text">Tenant Actions: </p>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd">
-
-        <div class="container">
-
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tenantNav">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a class="navbar-brand" asp-controller="Tenant" asp-action="Index">Tenant Management</a>
             </div>
-
-            <div class="navbar-collapse collapse">
+            <div class"collapse navbar-collapse" id="tenantNav">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="TenantBookings" asp-action="Index">Make Requests & Bookings</a></li>
-                    <li><a asp-area="" asp-controller="TenantMaintenances" asp-action="Index">Make Maintenance Requests </a></li>
+                    <li><a asp-area="" asp-controller="TenantBookings" asp-action="Index">Requests & Bookings</a></li>
+                    <li><a asp-area="" asp-controller="TenantMaintenances" asp-action="Index">Maintenance Requests </a></li>
                     <li><a asp-area="" asp-controller="TenantPayments" asp-action="Index">Payments</a></li>
                     <li><a asp-area="" asp-controller="Login" asp-action="LogoutPerformed">Logout</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-
 
     <div class="container body-content">
         @RenderBody()

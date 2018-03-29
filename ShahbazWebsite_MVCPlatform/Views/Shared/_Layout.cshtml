@@ -25,51 +25,37 @@
 </head>
 <body>
 
-    <div class="divide-nav">
-        <div class="container">
-            <p class="divide-text">Employee Actions: </p>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd">
-
-        <div class="container">
-
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#employeeNav">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a class="navbar-brand" asp-controller="Employee" asp-action="Index">Employee Management</a>
             </div>
-
-            <div class="navbar-collapse collapse">
+            <div class"collapse navbar-collapse" id="employeeNav">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Users" asp-action="Index">1. Add/Remove Users</a></li>
-                    <li><a asp-area="" asp-controller="Bookings" asp-action="Index">2. Bookings & Requests (list) </a></li>
-                    <li><a asp-area="" asp-controller="Maintenances" asp-action="Index">3. Maintenance Requests (list) </a></li>
-                    <li><a asp-area="" asp-controller="Login" asp-action="LogoutPerformed">4. Logout</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="divide-nav">
-        <div class="container">
-            <p class="divide-text">Reports: </p>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-default navbar-lower" role="navigation">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_DailyRequestsAndBookings">1. Daily Requests & Bookings</a></li>
-                    <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_Maintenance">2. Maintenance</a></li>
-                    <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_TenantSearchDetails">3. Tenant Search & Details</a></li>
-                    <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_WebPayments">4. Web Payments</a></li>
-                    <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_AggregateData">5. Aggregate data</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee Actions<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Users" asp-action="Index">User Management</a></li>
+                            <li><a asp-area="" asp-controller="Bookings" asp-action="Index">Bookings & Requests</a></li>
+                            <li><a asp-area="" asp-controller="Maintenances" asp-action="Index">Maintenance Requests</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reporting<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_DailyRequestsAndBookings">Daily Requests & Bookings</a></li>
+                            <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_Maintenance">Maintenance</a></li>
+                            <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_TenantSearchDetails">Tenant Search & Details</a></li>
+                            <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_WebPayments">Web Payments</a></li>
+                            <li><a asp-area="" asp-controller="Reporting" asp-action="Reports_AggregateData">Aggregate data</a></li>
+                        </ul>
+                    </li>
+                    <li><a asp-area="" asp-controller="Login" asp-action="LogoutPerformed">Logout</a></li>
                 </ul>
             </div>
         </div>
