@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-// For EF:
+ //For EF:
 using Microsoft.EntityFrameworkCore;
 using ShahbazWebsite_MVCPlatform.Models;
 
