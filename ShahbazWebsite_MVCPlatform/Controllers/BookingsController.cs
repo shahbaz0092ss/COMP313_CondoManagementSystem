@@ -86,6 +86,18 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
             return View(booking);
         }
 
+         // ** FIXED 
+        [HttpPost]
+        public IActionResult EditFixed(Booking model)
+            {
+
+                    _context.Update(model);
+                    _context.SaveChanges();
+
+            return View("Edit", model);
+            }
+
+
         // POST: Bookings/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -140,6 +152,18 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
             return View(booking);
         }
+
+        // ** FIXED 
+        [HttpPost]
+        public IActionResult DeleteConfirmedFixed (Booking model)
+            {
+
+                _context.Remove(model);
+                _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+
+            }
 
         // POST: Bookings/Delete/5
         [HttpPost, ActionName("Delete")]
