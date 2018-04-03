@@ -86,6 +86,17 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
             return View(maintenance);
         }
 
+        // ** FIXED 
+        [HttpPost]
+        public IActionResult EditFixed(Maintenance model)
+            {
+
+                    _context.Update(model);
+                    _context.SaveChanges();
+
+            return View("Edit", model);
+            }
+
         // POST: Maintenances/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -140,6 +151,18 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
             return View(maintenance);
         }
+
+         // ** FIXED 
+        [HttpPost]
+        public IActionResult DeleteConfirmedFixed (Maintenance model)
+            {
+
+                _context.Remove(model);
+                _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+
+            }
 
         // POST: Maintenances/Delete/5
         [HttpPost, ActionName("Delete")]
