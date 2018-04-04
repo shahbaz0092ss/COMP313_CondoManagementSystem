@@ -5,9 +5,12 @@
     "\\ShahbazWebsite_MVCPlatform\\Controllers",
     "\\ShahbazWebsite_MVCPlatform\\Models",
     "\\ShahbazWebsite_MVCPlatform\\Views",
-    "\\ShahbazWebsite_MVCPlatform\\Views\\Shared",
-    "\\ShahbazWebsite_MVCPlatform\\Views\\TenantBookings"
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Bookings",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Login",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Reporting",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\TenantPayments",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Users"
   ],
-  "SelectedNode": "\\ShahbazWebsite_MVCPlatform\\Controllers\\TenantController.cs",
+  "SelectedNode": "\\ShahbazWebsite_MVCPlatform\\Models",
   "PreviewInSolutionExplorer": false
 }
