@@ -195,11 +195,63 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
             return View(await comp313MVCDatabaseContext.ToListAsync());
         }
 
+
         public IActionResult Reports_AggregateData()
         {
+                // Returning this model 
+                var reportmodel = new Reporting_Aggregates();
+
+                reportmodel.User_TotalEmployees =  _context.User.Count(u => u.UserType == "Employee" ||  u.UserType == "employee");
+                reportmodel.User_TotalTenants =  _context.User.Count(u => u.UserType == "Tenant" ||  u.UserType == "tenant");
+
+                reportmodel.Booking_TotalParking =  _context.Booking.Count(b => b.Category == "Parking" ||  b.Category == "parking");
+                reportmodel.Booking_TotalGuestParking =  _context.Booking.Count(b => b.Category == "Guest Parking" ||  b.Category == "guest parking"
+                                                                                 ||  b.Category == "Guest parking" ||  b.Category == "guest Parking");
+                reportmodel.Booking_TotalPartyHall =  _context.Booking.Count(b => b.Category == "Party Hall" ||  b.Category == "party hall"
+                                                                                 ||  b.Category == "Party hall" || b.Category == "party Hall");
 
 
-                return View();
+                reportmodel.Maintenance_TotalRepair = _context.Maintenance.Count(m => m.Category == "Repair" || m.Category == "repair");
+                reportmodel.Maintenance_TotalEmergency = _context.Maintenance.Count(m => m.Category == "Emergency" || m.Category == "emergency");
+                reportmodel.Maintenance_TotalElectrical = _context.Maintenance.Count(m => m.Category == "Electrical" || m.Category == "electrical");
+                reportmodel.Maintenance_TotalPlumbing  = _context.Maintenance.Count(m => m.Category == "Plumbing " || m.Category == "plumbing");
+                reportmodel.Maintenance_TotalHVAC = _context.Maintenance.Count(m => m.Category == "HVAC" || m.Category == "hvac");
+                reportmodel.Maintenance_TotalCleaning  = _context.Maintenance.Count(m => m.Category == "Cleaning" || m.Category == "cleaning");
+
+                // .Value used for:
+                // https://stackoverflow.com/questions/5995317/how-to-convert-c-sharp-nullable-int-to-int
+                reportmodel.Maintenance_TotalDollarAmount = _context.Maintenance.Sum(m => m.DollarAmount).Value;
+
+
+
+                reportmodel.Payment_TotalUsers = _context.Payment.Select(p => p.UserId.Value).Distinct().Count();
+                reportmodel.Payment_TotalAmountPaid = _context.Payment.Sum(p => p.AmountPaid).Value;
+
+                reportmodel.Payment_TotalUsersRent = _context.Payment.Where(p => p.TypeOfPayment == "Rent" ||
+                                                                                 p.TypeOfPayment == "rent")
+                                                                     .Select(p => p.UserId.Value).Distinct().Count();
+
+
+                reportmodel.Payment_TotalRentPaid =_context.Payment.Where(p => p.TypeOfPayment == "Rent" ||
+                                                                           p.TypeOfPayment == "rent")   
+                                                               .Sum(p => p.AmountPaid.Value);
+
+
+            reportmodel.Payment_TotalLockerRental =_context.Payment.Where(p => p.TypeOfPayment == "Locker Rental" ||
+                                                                               p.TypeOfPayment == "locker rental" ||  
+                                                                               p.TypeOfPayment == "Locker rental" ||
+                                                                               p.TypeOfPayment == "locker Rental") 
+                                                               .Sum(p => p.AmountPaid.Value);
+
+             reportmodel.Payment_TotalPremiumCleaning =_context.Payment.Where(p => p.TypeOfPayment == "Premium Cleaning" ||
+                                                                               p.TypeOfPayment == "premium pleaning" ||  
+                                                                               p.TypeOfPayment == "Premium cleaning" ||
+                                                                               p.TypeOfPayment == "premium Cleaning") 
+                                                               .Sum(p => p.AmountPaid.Value);
+
+
+
+                return View(reportmodel);
         }
 
         // WebPayments
