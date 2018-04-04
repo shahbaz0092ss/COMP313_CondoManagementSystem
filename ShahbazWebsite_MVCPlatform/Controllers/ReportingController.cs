@@ -186,15 +186,13 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         }
 
 
-
-
-        public IActionResult Reports_WebPayments()
+        // Web Paments report - Show all data
+        public async Task<IActionResult> Reports_WebPayments()
         {
+            var comp313MVCDatabaseContext = _context.Payment.Include(p => p.User);
 
-
-
-                return View();
-          
+            // Return entire list of payments
+            return View(await comp313MVCDatabaseContext.ToListAsync());
         }
 
         public IActionResult Reports_AggregateData()
