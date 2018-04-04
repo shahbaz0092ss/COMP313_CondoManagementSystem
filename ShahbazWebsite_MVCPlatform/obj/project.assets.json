@@ -12592,25 +12592,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User1\\.nuget\\packages\\": {},
+    "C:\\Users\\PC\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User1\\Desktop\\ASP.NET MVC\\COMP313_CondoManagementSystem\\ShahbazWebsite_MVCPlatform\\ShahbazWebsite_MVCPlatform.csproj",
+      "projectUniqueName": "C:\\Users\\Mudrak\\semesterWork\\Programs\\Comp313CondoManagementFolder\\COMP313_CondoManagementSystem\\ShahbazWebsite_MVCPlatform\\ShahbazWebsite_MVCPlatform.csproj",
       "projectName": "ShahbazWebsite_MVCPlatform",
-      "projectPath": "C:\\Users\\User1\\Desktop\\ASP.NET MVC\\COMP313_CondoManagementSystem\\ShahbazWebsite_MVCPlatform\\ShahbazWebsite_MVCPlatform.csproj",
-      "packagesPath": "C:\\Users\\User1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User1\\Desktop\\ASP.NET MVC\\COMP313_CondoManagementSystem\\ShahbazWebsite_MVCPlatform\\obj\\",
+      "projectPath": "C:\\Users\\Mudrak\\semesterWork\\Programs\\Comp313CondoManagementFolder\\COMP313_CondoManagementSystem\\ShahbazWebsite_MVCPlatform\\ShahbazWebsite_MVCPlatform.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mudrak\\semesterWork\\Programs\\Comp313CondoManagementFolder\\COMP313_CondoManagementSystem\\ShahbazWebsite_MVCPlatform\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
