@@ -1,0 +1,21 @@
+
+@{
+    ViewData["Title"] = "Reports - Tenant Search";
+}
+
+
+
+
+<br />
+
+<p style="background-color:rgb(0, 102, 102); color:white"><strong>FIND TENANT:</strong>&nbsp;&nbsp;&nbsp;</p>
+
+@*Note: The below method is not passing a model. This is old way of doing MVC.*@
+
+<form asp-action="Reports_TenantSearchDetails" asp-controller="Reporting" method="post">
+    <input name="TenantSearch" placeholder="Search full name or ID..." />
+    <br />
+    <input type="submit" value="Find" />
+</form>
+
+
