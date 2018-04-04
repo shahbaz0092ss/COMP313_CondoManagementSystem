@@ -1,78 +1,116 @@
 
+@model ShahbazWebsite_MVCPlatform.Models.Reporting_Aggregates
+
 @{
     ViewData["Title"] = "Reports - AggregateData";
 }
 
-<h2>Reports - AggregateData</h2>
 
 <br />
 
-<h1> ******* Dummy Data ****** </h1>
+<div style="color:rgb(0, 102, 102)"><strong>AGGREGATE DATA:</strong></div>
+
+<!--Line, yellow colored-->
+<div style="width: 300px; height: 5px; border-bottom: 4px solid rgb(255, 233, 26); position: absolute"></div>
 
 <br />
 
-<table>
+<table style="width: 50%; border-width: 2px">
     <tr>
-        <td>
-            Total Number of Bookings:
-        </td>
-        <td>
-        </td>
+        <td style="background-color:rgb(0, 102, 102); color:white">Users - Employees </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.User_TotalEmployees)</td>
     </tr>
     <tr>
-        <td>
-            Bookings (Parking):
-        </td>
-        <td>
-
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Bookings (Party Halls):
-        </td>
-        <td>
-
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Maintanence requests:
-        </td>
-        <td>
-
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Total dollars paid for Maintenance:
-        </td>
-        <td>
-
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Total number of Users in system:
-        </td>
-        <td>
-
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Total rent paying Users:
-        </td>
-        <td>
-
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Total payments made overall:
-        </td>
-        <td>
-
-        </td>
+        <td style="background-color:rgb(0, 102, 102); color:white">Users - Tenants </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.User_TotalTenants)</td>
     </tr>
 </table>
+
+<br />
+
+<table style="width: 60%; border-width: 2px">
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Bookings/Requests - Parking </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.Booking_TotalParking)</td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Bookings/Requests - Guest Parking </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.Booking_TotalGuestParking)</td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Bookings/Requests - Party Hall</td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.Booking_TotalPartyHall)</td>
+    </tr>
+</table>
+
+
+
+<br />
+
+<table style="width: 80%; border-width: 2px">
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Maintenance - Repair </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.Maintenance_TotalRepair)</td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Maintenance - Emergency </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.Maintenance_TotalEmergency)</td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Maintenance - Electrical </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.Maintenance_TotalElectrical)</td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Maintenance - Plumbing </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.Maintenance_TotalPlumbing)</td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Maintenance - HVAC (Heating, Venting, Air Conditioning) </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.Maintenance_TotalHVAC)</td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Maintenance - Cleaning </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.Maintenance_TotalCleaning)</td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Maintenance - Amount Paid by Condominium (total) </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">$ @Html.DisplayFor(model => model.Maintenance_TotalDollarAmount)</td>
+    </tr>
+</table>
+
+
+<br />
+
+<table style="width: 60%; border-width: 2px">
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Payments - Paying users </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">@Html.DisplayFor(model => model.Payment_TotalUsers)</td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Payments - Total Amount Paid </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">
+        $ 
+        @Html.DisplayFor(model => model.Payment_TotalAmountPaid)
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Payments for Rent (By # of Users) </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">
+        $ 
+        @Html.DisplayFor(model => model.Payment_TotalRentPaid)
+        ( 
+        @Html.DisplayFor(model => model.Payment_TotalUsersRent) 
+        )
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Payments for - Locker rentals </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">$ @Html.DisplayFor(model => model.Payment_TotalLockerRental)</td>
+    </tr>
+    <tr>
+        <td style="background-color:rgb(0, 102, 102); color:white">Payments for - Premium cleaning </td>
+        <td style="background-color: rgb(229,234,238);text-align:center">$ @Html.DisplayFor(model => model.Payment_TotalPremiumCleaning)</td>
+    </tr>
+
+</table>
+
