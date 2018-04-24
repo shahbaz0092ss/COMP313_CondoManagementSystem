@@ -18,8 +18,12 @@
                     @Html.DisplayNameFor(model => model.Category)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Date)
-                    (created on)
+                    @Html.DisplayNameFor(model => model.StartDate)
+                    (Created on:)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EndDate)
+                    (Closed on:)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.MaintenanceDetail)
@@ -52,7 +56,10 @@
                     @Html.DisplayFor(modelItem => item.Category)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Date)
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MaintenanceDetail)

@@ -1,4 +1,5 @@
 
+
 @model IEnumerable<ShahbazWebsite_MVCPlatform.Models.Maintenance>
 
 
@@ -25,7 +26,10 @@
                     @Html.DisplayNameFor(model => model.Category)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Date)
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EndDate)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.MaintenanceDetail)
@@ -42,7 +46,10 @@
                     @Html.DisplayFor(modelItem => item.Category)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Date)
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MaintenanceDetail)

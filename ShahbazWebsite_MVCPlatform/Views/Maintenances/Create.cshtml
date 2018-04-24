@@ -24,14 +24,20 @@
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
+                <label asp-for="StartDate" class="control-label"></label>
                 (created on)
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                (closed on)
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MaintenanceDetail" class="control-label"></label>
-                (keep below 25 chars, or you will see Errors)
+                (Keep below 25 characters)
                 <input asp-for="MaintenanceDetail" class="form-control" />
                 <span asp-validation-for="MaintenanceDetail" class="text-danger"></span>
             </div>
