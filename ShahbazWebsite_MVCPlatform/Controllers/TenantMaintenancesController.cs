@@ -46,7 +46,7 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MaintenanceId,UserId,Category,Date,MaintenanceDetail,Status,DollarAmount,Note")] Maintenance maintenance)
+        public async Task<IActionResult> Create([Bind("MaintenanceId,UserId,Category,StartDate,EndDate,MaintenanceDetail,Status,DollarAmount,Note")] Maintenance maintenance)
         {
             maintenance.Status = "Pending";
 

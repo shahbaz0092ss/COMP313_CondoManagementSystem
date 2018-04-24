@@ -1,3 +1,4 @@
+
 @model IEnumerable<ShahbazWebsite_MVCPlatform.Models.Booking>
 
     @{
@@ -19,7 +20,11 @@
                     @Html.DisplayNameFor(model => model.Category)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Date)
+                    @Html.DisplayNameFor(model => model.StartDate)
+                    (for)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EndDate)
                     (for)
                 </th>
                 <th>
@@ -56,7 +61,10 @@
                     @Html.DisplayFor(modelItem => item.Category)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Date)
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.TimeFrom)

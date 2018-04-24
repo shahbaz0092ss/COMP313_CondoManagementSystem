@@ -46,7 +46,7 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookingId,UserId,Category,Date,TimeFrom,TimeTo,BookingDetail,Status")] Booking booking)
+        public async Task<IActionResult> Create([Bind("BookingId,UserId,Category,StartDate,EndDate,TimeFrom,TimeTo,BookingDetail,Status")] Booking booking)
         {
             booking.Status = "Pending";
 

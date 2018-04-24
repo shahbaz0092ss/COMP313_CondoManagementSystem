@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShahbazWebsite_MVCPlatform.Models
 
@@ -15,7 +16,10 @@ namespace ShahbazWebsite_MVCPlatform.Models
         public int BookingId { get; set; }
         public int? UserId { get; set; }
         public string Category { get; set; }
-        public string Date { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime? StartDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime? EndDate { get; set; }
         public string TimeFrom { get; set; }
         public string TimeTo { get; set; }
         public string BookingDetail { get; set; }

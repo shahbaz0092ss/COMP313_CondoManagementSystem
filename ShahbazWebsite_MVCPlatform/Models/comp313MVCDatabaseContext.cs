@@ -46,15 +46,13 @@ namespace ShahbazWebsite_MVCPlatform.Models
 
                 entity.Property(e => e.BookingId).HasColumnName("BookingID");
 
+               
+
                 entity.Property(e => e.BookingDetail)
                     .HasMaxLength(25)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Category)
-                    .HasMaxLength(25)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Date)
                     .HasMaxLength(25)
                     .IsUnicode(false);
 
@@ -85,10 +83,6 @@ namespace ShahbazWebsite_MVCPlatform.Models
                 entity.Property(e => e.MaintenanceId).HasColumnName("MaintenanceID");
 
                 entity.Property(e => e.Category)
-                    .HasMaxLength(25)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Date)
                     .HasMaxLength(25)
                     .IsUnicode(false);
 

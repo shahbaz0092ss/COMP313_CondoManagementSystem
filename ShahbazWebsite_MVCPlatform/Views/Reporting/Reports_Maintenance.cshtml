@@ -22,8 +22,12 @@
                     <strong>@Html.DisplayNameFor(model => model.Category)</strong>
                 </th>
                 <th style="color:white; border: 2px solid white">
-                    <strong>@Html.DisplayNameFor(model => model.Date)</strong>
+                    <strong>@Html.DisplayNameFor(model => model.StartDate)</strong>
                     (created on)
+                </th>
+                <th style="color:white; border: 2px solid white">
+                    <strong>@Html.DisplayNameFor(model => model.EndDate)</strong>
+                    (closed on)
                 </th>
                 <th style="color:white; border: 2px solid white">
                     <strong>@Html.DisplayNameFor(model => model.MaintenanceDetail)</strong>
@@ -55,7 +59,10 @@
                     @Html.DisplayFor(modelItem => item.Category)
                 </td>
                 <td style="border: 2px solid white">
-                    @Html.DisplayFor(modelItem => item.Date)
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td style="border: 2px solid white">
+                    @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
                 <td style="border: 2px solid white">
                     @Html.DisplayFor(modelItem => item.MaintenanceDetail)

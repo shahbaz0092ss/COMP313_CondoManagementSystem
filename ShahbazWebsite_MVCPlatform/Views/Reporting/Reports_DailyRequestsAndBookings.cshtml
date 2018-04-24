@@ -22,11 +22,14 @@
                     <strong>@Html.DisplayNameFor(model => model.BookingId)</strong>
                 </th>
                 <th style="color:white; border: 2px solid white">
-                   <strong> @Html.DisplayNameFor(model => model.Category)</strong>
+                    <strong> @Html.DisplayNameFor(model => model.Category)</strong>
                 </th>
                 <th style="color:white; border: 2px solid white">
-                    <strong>@Html.DisplayNameFor(model => model.Date)</strong>
-                                        (for)
+                    <strong>@Html.DisplayNameFor(model => model.StartDate)</strong>
+                    (for)
+                </th>
+                <th style="color:white; border: 2px solid white">
+                    <strong>@Html.DisplayNameFor(model => model.EndDate)</strong>
                 </th>
                 <th style="color:white; border: 2px solid white">
                     <strong>@Html.DisplayNameFor(model => model.TimeFrom)</strong>
@@ -61,7 +64,10 @@
                     @Html.DisplayFor(modelItem => item.Category)
                 </td>
                 <td style="border: 2px solid white">
-                    @Html.DisplayFor(modelItem => item.Date)
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td style="border: 2px solid white">
+                    @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
                 <td style="border: 2px solid white">
                     @Html.DisplayFor(modelItem => item.TimeFrom)

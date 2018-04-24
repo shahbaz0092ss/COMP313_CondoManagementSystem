@@ -39,8 +39,9 @@ namespace ShahbazWebsite_MVCPlatform
 
             // Adding: DB Context to be registered and used throughout web app
 
-             var connection = @"Server=Provider=SQLNCLI11.1;Data Source=tcp:comp313mvcdatabaseserver.database.windows.net;User ID=mudrak;Initial Catalog=comp313MVCDatabase;Password=Password@123";
-             
+            // Azure DB link:
+            var connection = @"Server=Provider=SQLNCLI11.1;Data Source=tcp:comp313mvcdatabaseserver.database.windows.net;User ID=mudrak;Initial Catalog=comp313MVCDatabase;Password=Password@123";
+
              services.AddDbContext<comp313MVCDatabaseContext>(options => options.UseSqlServer(connection));
 
         }

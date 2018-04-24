@@ -1,4 +1,5 @@
 
+
 @model ShahbazWebsite_MVCPlatform.Models.Maintenance
 
 @{
@@ -19,11 +20,18 @@
             @Html.DisplayFor(model => model.Category)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Date)
+            @Html.DisplayNameFor(model => model.StartDate)
             (created on)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Date)
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+            (closed on)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.MaintenanceDetail)
