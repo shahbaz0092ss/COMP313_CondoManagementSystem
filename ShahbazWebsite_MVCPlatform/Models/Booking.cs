@@ -1,4 +1,5 @@
 
+
 // Scafollding: Create models from the existing database
 // 
 // "Getting Started with EF Core on ASP.NET Core with an Existing Database"

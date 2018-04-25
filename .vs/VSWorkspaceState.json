@@ -5,12 +5,12 @@
     "\\ShahbazWebsite_MVCPlatform\\Controllers",
     "\\ShahbazWebsite_MVCPlatform\\Models",
     "\\ShahbazWebsite_MVCPlatform\\Views",
-    "\\ShahbazWebsite_MVCPlatform\\Views\\Bookings",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\Employee",
     "\\ShahbazWebsite_MVCPlatform\\Views\\Login",
     "\\ShahbazWebsite_MVCPlatform\\Views\\Reporting",
-    "\\ShahbazWebsite_MVCPlatform\\Views\\TenantPayments",
-    "\\ShahbazWebsite_MVCPlatform\\Views\\Users"
+    "\\ShahbazWebsite_MVCPlatform\\Views\\TenantBookings",
+    "\\ShahbazWebsite_MVCPlatform\\Views\\TenantMaintenances"
   ],
-  "SelectedNode": "\\ShahbazWebsite_MVCPlatform\\Models",
+  "SelectedNode": "\\ShahbazWebsite_MVCPlatform\\Models\\LoginModel.cs",
   "PreviewInSolutionExplorer": false
 }
