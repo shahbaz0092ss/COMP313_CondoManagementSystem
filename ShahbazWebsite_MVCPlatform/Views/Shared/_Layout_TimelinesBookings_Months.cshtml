@@ -1,0 +1,113 @@
+﻿
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+
+        <meta charset='utf-8' />
+
+        <title>@ViewData["Title"]</title>
+
+        @*FullCalendar.io css and scripts loaded:*@
+        <link href='~/css/fullcalendar.css' rel='stylesheet' />
+        <link href='~/css/fullcalendar.print.css' rel='stylesheet' media='print' />
+        <script src='~/lib/moment.min.js'></script>
+        <script src='~/lib/jquery.min.js'></script>
+        <script src='~/js/fullcalendar.js'></script>
+
+
+
+        @*FullCalendar.io JQuery script running to fill div with id = "calendar" in body: *@
+        <script>
+
+            $(document).ready(function () {
+
+                $('#calendar').fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month'
+                    },
+                    defaultDate: '2018-04-01',
+                    firstDay: '01', // 01 = Monday
+                    defaultView: 'month',
+                    navLinks: true, // can click day/week/month names to navigate views
+                    editable: false,
+                    eventLimit: false, // allow "more" link when too many events
+                    contentHeight: 700,
+
+                    eventRender: function (event, element, view) {
+
+                        if (event.type == "Parking" || event.type == "parking"
+                                                    || event.type == "Guest Parking"
+                                                    || event.type == "guest parking") {
+
+                            $(element).find('.fc-content').prepend("&nbsp;")
+                                .prepend('<img src="/images/parking.png" width="22" height="22" />')
+                                .prepend("&nbsp; &nbsp;");
+                        }
+
+                        if (event.type == "Party Hall" || event.type == "party hall") {
+                                                                                        
+
+                            $(element).find('.fc-content').prepend("&nbsp;")
+                                .prepend('<img src="/images/music.png" width="20" height="20" />')
+                                .prepend('<img src="/images/partyhall.png" width="20" height="20" />')
+                                .prepend("&nbsp; &nbsp;");
+                        }
+
+                        if (event.status == "Approved" || event.status == "approved" ) {
+
+                            $(element).find('.fc-content').prepend("&nbsp; &nbsp;");
+
+                            $(element).find('.fc-content').append("&nbsp; &nbsp;")
+                                .append('<img src="/images/check.png" width="12" height="12" />');
+
+                        }
+
+
+
+                    },
+
+                    eventSources: [
+
+                        {
+
+                            url: '/Timelines/TimelinesBookings_Months_JSON'
+                            // Note: no "~" in url, we are in JQuery world
+                        }
+
+                    ]
+
+                });
+
+            });
+
+        </script>
+
+
+
+        <style>
+
+
+            body {
+                /*margin: 40px 10px;*/
+                /*padding: 0;*/
+                font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+                font-size: 17px;
+            }
+
+            #calendar {
+                /*max-width: 900px;*/
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+
+        @RenderBody()
+
+    </body>
+</html>
+
+

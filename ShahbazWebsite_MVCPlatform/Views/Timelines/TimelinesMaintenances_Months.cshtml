@@ -1,0 +1,21 @@
+
+@{
+    ViewData["Title"] = "Timelines - Maintenance (monthly view)";
+    Layout = "_Layout_TimelinesMaintenances_Months";
+}
+
+
+<style>
+    .fc-day-grid-event > .fc-content {
+        white-space: normal;
+    }
+</style>
+
+
+<div style="background-color:whitesmoke">
+    <h2>Maintenance requests (open and closed) </h2>
+    <br />
+</div>
+
+@*Filled by JQuery script in _LayoutCalendar:*@
+<div id='calendar'></div>

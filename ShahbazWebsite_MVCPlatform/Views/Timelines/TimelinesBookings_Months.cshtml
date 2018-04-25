@@ -1,0 +1,23 @@
+
+@{
+    ViewData["Title"] = "Timelines - Bookings (monthly view)";
+    Layout = "_Layout_TimelinesBookings_Months";
+}
+
+
+@*Title only one-line display fixed to multi-line, via:
+    https://stackoverflow.com/questions/13597136/fullcalender-event-title-only-allowed-one-line*@
+<style>
+    .fc-day-grid-event > .fc-content {
+        white-space: normal;
+    }
+</style>
+
+
+<div style="background-color:whitesmoke">
+    <h2>Booking requests (pending and approved) </h2>
+    <br />
+</div>
+
+@*Filled by JQuery script in _LayoutCalendar:*@
+<div id='calendar'></div>
