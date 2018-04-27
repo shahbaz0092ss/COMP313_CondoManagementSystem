@@ -26,8 +26,17 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         
         public IActionResult TimelinesBookings_Months()
         {
+             if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
 
             return View();
+
+             }
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
 
 
         }
@@ -114,13 +123,35 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
          // 
         public IActionResult TimelinesBookings_Weeks()
         {
+             if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
+
             return View();
+
+            }
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
+
+
         }
 
          
         public IActionResult TimelinesMaintenances_Months()
         {
+            if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
+
             return View();
+
+             }
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
         }
 
         
@@ -214,7 +245,18 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
          // 
         public IActionResult TimelinesMaintenances_Weeks()
         {
+            if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
+
             return View();
+
+               }
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
+
         }
 
         
