@@ -1,9 +1,15 @@
 
 @model ShahbazWebsite_MVCPlatform.Models.Booking
 
+@using Microsoft.AspNetCore.Http
+
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_TenantLayout.cshtml";
+}
+
+@{
+int UserID = Context.Session.GetInt32("_UserID").Value;
 }
 
 <h2>Create</h2>
@@ -16,7 +22,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="UserId" class="control-label"></label>
-                <input asp-for="UserId" class="form-control" value="@ViewData["UserId"]" readonly="readonly">
+                <input asp-for="UserId" class="form-control" value="@UserID" readonly="readonly">
             </div>
             <div class="form-group">
                 <label asp-for="Category" class="control-label"></label>

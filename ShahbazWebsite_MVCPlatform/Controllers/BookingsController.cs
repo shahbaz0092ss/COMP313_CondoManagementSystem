@@ -23,8 +23,19 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         // GET: Bookings - Show All
         public async Task<IActionResult> Index()
         {
+            if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
+
             var comp313MVCDatabaseContext = _context.Booking.Include(b => b.User);
             return View(await comp313MVCDatabaseContext.ToListAsync());
+
+            }
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
+
         }
 
         // GET: Bookings/Details/5

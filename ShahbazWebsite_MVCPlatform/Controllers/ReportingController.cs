@@ -32,8 +32,18 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         public async Task<IActionResult> Reports_DailyRequestsAndBookings()
         {
 
+            if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
+
             var comp313MVCDatabaseContext = _context.Booking.Include(b => b.User);
             return View(await comp313MVCDatabaseContext.ToListAsync());
+
+            }
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
 
 
         }
@@ -41,14 +51,29 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
            // GET: Maintenances report - Show all data
         public async Task<IActionResult> Reports_Maintenance()
         {
+
+             if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
+
             var comp313MVCDatabaseContext = _context.Maintenance.Include(m => m.User);
             return View(await comp313MVCDatabaseContext.ToListAsync());
+             
+            }
+             
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
         }
 
 
          // POST
         public IActionResult Reports_TenantSearchDetails(string TenantSearch)
         {
+
+             if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
 
                 // For the view
                 ViewData["TenantSearchRequested"] = TenantSearch;
@@ -174,13 +199,32 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
                 return View(reportModel);
 
+                 }
+             
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
+
             
         }
 
         public IActionResult Reports_TenantSearch()
         {
+            if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
 
                 return View();
+
+                }
+             
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
+
 
             
         }
@@ -189,15 +233,33 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         // Web Paments report - Show all data
         public async Task<IActionResult> Reports_WebPayments()
         {
+
+         if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
+
             var comp313MVCDatabaseContext = _context.Payment.Include(p => p.User);
 
             // Return entire list of payments
             return View(await comp313MVCDatabaseContext.ToListAsync());
+
+
+          }
+             
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
+
         }
 
 
         public IActionResult Reports_AggregateData()
         {
+                
+             if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
+
                 // Returning this model 
                 var reportmodel = new Reporting_Aggregates();
 
@@ -252,6 +314,14 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
 
                 return View(reportmodel);
+
+            }
+             
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
         }
 
         // WebPayments

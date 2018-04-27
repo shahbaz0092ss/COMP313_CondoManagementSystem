@@ -13,6 +13,17 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 {
     public class LoginController : Controller
     {
+        
+        
+         private readonly comp313MVCDatabaseContext _context;
+
+         public LoginController(comp313MVCDatabaseContext context)
+        {
+            _context = context;
+        }
+
+
+        
         // Ruouting info:
         // Attribute routing
         // https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing
@@ -26,7 +37,7 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         public IActionResult Login()
         {
 
-            // ***TO IMPLEMENT
+         
             // Check if already logged in, send to Home. If not, then send to Login view.
 
             if (TempData.ContainsKey(key: "EmployeeLogin"))
@@ -39,15 +50,23 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
             }
 
+              if (TempData.ContainsKey(key: "TenantLogin"))
+            {
+
+                //System.Diagnostics.Debug.WriteLine("Session: Login is True");
+
+                return RedirectToAction("Index", "Tenant");
+
+
+            }
+
             else
             {
+                //Not logged in: Send to Login view again
                 return View();
             }
 
-            //Not logged in: Send to Login view
-            //By default: LoginController.Login() maps to the Login.cshtml view
-
-            // return View();
+           
 
         }
 
@@ -56,66 +75,92 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         [HttpPost]
         public IActionResult LoginPerformed(LoginModel model)
         {
-            //IF EMPLOYEE
+            
+            // DB Lookup
 
-            if (model.Username == "employee")
-            {
-                // ConnectToDB and Check if Model.Username and Model.Password exist as Employee
-                // If YES
-                // Then set state and allow login as Employee
-                // Send to Employee controller
+            var entered_Username = model.Username;
+            var entered_Password = model.Password;
+
+            var user =  _context.User.SingleOrDefault(u => u.Email == (entered_Username));
+            //var user = _context.User.Where(u => u.User.UserId == 1);
+
+
+             // If user Email is not in DB, back to login
+             if (user == null)
+                {
+                    ViewData["Message"] = "Not found in DB";
+                    
+                    return RedirectToAction("Login", "Login");
+                }
+
+             // If pass is good, proceed
+             if (user.Password == entered_Password)
+                {
+
+                        // Employee user goes to controller dealing with Employee
+                        if (user.UserType == "Employee" || user.UserType == "employee")
+                        {
+
 
                 
-                // TempData used by other controllers for checking logged in state.
-                // NEXT: Switch to Session.
-                TempData["EmployeeLogin"] = "True";
+                            // TempData used by other controllers for checking logged in state.
+                            // NEXT: Switch to Session.
+                            TempData["EmployeeLogin"] = "True";
+                            TempData["EmployeeEmail"] = user.Email;
+                            TempData["EmployeeID"] = user.UserId;
 
 
-                //Session set: Username. So we can display it later in views.
+                            // SESSION ***
+                            // Session set: Username + ID. So we can display it later in views.
 
-                var Login_UserName = "Employee";
-                const string SessionUserNameKey = "_Name";
+                            var sessionUserName = user.Email;
+                            const string SessionUsernameKey = "_Username";
+                            HttpContext.Session.SetString(SessionUsernameKey, sessionUserName);
 
-                HttpContext.Session.SetString(SessionUserNameKey, Login_UserName);
-
-
-                // Take to View:Index, in Controller:Employee
-
-                return RedirectToAction("Index", "Employee");
-            }
-
-            //IF TENANT
-
-            if (model.Username == "tenant")
-            {
-                // ConnectToDB and Check if Model.Username and Model.Password exist as Tenant
-                // If YES
-                // Then set state and allow login as Tenant
-                // Send to Tenant controller
-                // Send to Action -> Index() in Controller -> Tenant
-
-                TempData["TenantLogin"] = "True";
-
-                 //Session set: Username. So we can display it later in views.
-
-                var Login_UserName = "Tenant";
-                const string SessionUserNameKey = "_Name";
-                HttpContext.Session.SetString(SessionUserNameKey, Login_UserName);
+                            var sessionUserID = user.UserId;
+                            const string SessionUserIDKey = "_UserID";
+                            HttpContext.Session.SetInt32(SessionUserIDKey, sessionUserID);
 
 
+                            return RedirectToAction("Index", "Employee");
+
+                        }
+
+                        // Tenant 
+                        if (user.UserType == "Tenant" || user.UserType == "tenant")
+                        {
 
 
-                return RedirectToAction("Index", "Tenant");
-            }
+                
+                            // TempData used by other controllers for checking logged in state.
+                            // NEXT: Switch to Session.
+                            TempData["TenantLogin"] = "True";
+                            TempData["TenantEmail"] = user.Email;
+                            TempData["TenantID"] = user.UserId;
 
+
+                            // SESSION ***
+                            // Session set: Username + ID. So we can display it later in views.
+
+                            var sessionUserName = user.Email;
+                            const string SessionUsernameKey = "_Username";
+                            HttpContext.Session.SetString(SessionUsernameKey, sessionUserName);
+
+                            var sessionUserID = user.UserId;
+                            const string SessionUserIDKey = "_UserID";
+                            HttpContext.Session.SetInt32(SessionUserIDKey, sessionUserID);
+
+                            return RedirectToAction("Index", "Tenant");
+
+                        }
+
+                }
             else
             {
                 return RedirectToAction("Login", "Login");
             }
 
-
-
-
+             return RedirectToAction("Login", "Login");
 
         }
 
@@ -142,20 +187,7 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
             return RedirectToAction("Login", "Login");
 
 
-            // ********************** NEXT ******************
-            // Check if Emloyee or Tenant
-
-            //if (TempData.ContainsKey("EmployeeLogin"))
-            //{
-            //    TempData.Remove("EmployeeLogin");
-            //    return RedirectToAction("Login", "Login");
-            //}
-
-            //if (TempData.ContainsKey("TenantLogin"))
-            //{
-            //    TempData.Remove("TenantLogin");
-            //    return RedirectToAction("Login", "Login");
-            //}
+       
         }
 
 

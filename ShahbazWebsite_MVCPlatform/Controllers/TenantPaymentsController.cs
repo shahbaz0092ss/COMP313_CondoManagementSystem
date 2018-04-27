@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 using ShahbazWebsite_MVCPlatform.Models;
 
 namespace ShahbazWebsite_MVCPlatform.Controllers
@@ -23,12 +24,13 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         // GET: TenantPayments - Per User
         public async Task<IActionResult> Index()
         {
-            // NEXT: 
+           
             // Get UserId from session
 
-            // FOR NOW:
-            // Just get result for UserId #1
-            var comp313MVCDatabaseContext = _context.Payment.Where(p => p.User.UserId == 1);
+            var UserID = HttpContext.Session.GetInt32("_UserID");
+            var comp313MVCDatabaseContext = _context.Payment.Where(p => p.User.UserId == UserID);
+
+
             return View(await comp313MVCDatabaseContext.ToListAsync());
         }
 

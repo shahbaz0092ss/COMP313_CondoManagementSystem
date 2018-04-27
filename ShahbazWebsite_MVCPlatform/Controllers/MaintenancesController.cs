@@ -22,8 +22,19 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         // GET: Maintenances
         public async Task<IActionResult> Index()
         {
+
+             if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
+
             var comp313MVCDatabaseContext = _context.Maintenance.Include(m => m.User);
             return View(await comp313MVCDatabaseContext.ToListAsync());
+
+            }
+            else
+            {
+                
+                return RedirectToAction("Login", "Login");
+            }
         }
 
         // GET: Maintenances/Details/5

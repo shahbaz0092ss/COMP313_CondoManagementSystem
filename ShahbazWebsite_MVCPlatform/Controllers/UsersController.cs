@@ -24,7 +24,19 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
+             if (TempData.ContainsKey(key: "EmployeeLogin"))
+            {
+
             return View(await _context.User.ToListAsync());
+
+              }
+             
+            else
+            {
+               
+                return RedirectToAction("Login", "Login");
+            }
+
         }
 
         // GET: Users/Details/5

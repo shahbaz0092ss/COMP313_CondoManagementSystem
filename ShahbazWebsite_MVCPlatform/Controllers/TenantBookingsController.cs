@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 using ShahbazWebsite_MVCPlatform.Models;
 
 namespace ShahbazWebsite_MVCPlatform.Controllers
@@ -25,8 +26,13 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
             // NEXT: 
             // Get UserId from session
          
+            // Hardcoded for testing purposes
             // Just get result for UserId #1
-            var comp313MVCDatabaseContext = _context.Booking.Where(b => b.User.UserId == 1);
+            // var comp313MVCDatabaseContext = _context.Booking.Where(b => b.User.UserId == 1);
+            
+            var UserID = HttpContext.Session.GetInt32("_UserID");
+            var comp313MVCDatabaseContext = _context.Booking.Where(b => b.User.UserId == UserID);
+
             return View(await comp313MVCDatabaseContext.ToListAsync());
 
         }
@@ -34,9 +40,9 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         // GET: TenantBookings/Create
         public IActionResult Create()
         {
-            //ViewData["UserId"] = new SelectList(_context.User, "UserId", "UserId");
-
-            ViewData["UserId"] = 1;
+           
+            // Hardcoded for testing
+            // ViewData["UserId"] = 1;
 
             return View();
         }
