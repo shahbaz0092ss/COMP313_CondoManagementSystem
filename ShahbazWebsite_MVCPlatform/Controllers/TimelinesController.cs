@@ -34,7 +34,8 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
 
         // Return JSON: Bookings data 
-        public JsonResult TimelinesBookings_Months_JSON()
+        // + Multi-usage  
+        public JsonResult TimelinesBookings_JSON()
         {
 
                 // Returning this list of model type to view (in our case, the layout)
@@ -96,7 +97,7 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
                                                                       color = colorCode,
                                                                       displayEventEnd = false,
                                                                       displayEventTime = false,
-                                                                      overlap = false
+                                                                      overlap = true
 
                                                                      });
 
@@ -111,7 +112,7 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
 
          // 
-        public IActionResult TimelinesBookings_Week()
+        public IActionResult TimelinesBookings_Weeks()
         {
             return View();
         }
