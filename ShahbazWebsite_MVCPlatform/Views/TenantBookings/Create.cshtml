@@ -20,29 +20,31 @@
             </div>
             <div class="form-group">
                 <label asp-for="Category" class="control-label"></label>
-                (Parking / Guest Parking / Party Hall / Etc.)
+                Type (Parking / Guest Parking / Party Hall / Locker/ Elevator (for moving) / Other / Etc.)
                 <input asp-for="Category" class="form-control" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="StartDate" class="control-label"></label>
-                (for)
+                (from:)
                 <input asp-for="StartDate" class="form-control" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EndDate" class="control-label"></label>
-                (for)
+                (till:)
                 <input asp-for="EndDate" class="form-control" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TimeFrom" class="control-label"></label>
+                (For example, 7 AM)
                 <input asp-for="TimeFrom" class="form-control" />
                 <span asp-validation-for="TimeFrom" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TimeTo" class="control-label"></label>
+                (For example, 10 PM)
                 <input asp-for="TimeTo" class="form-control" />
                 <span asp-validation-for="TimeTo" class="text-danger"></span>
             </div>

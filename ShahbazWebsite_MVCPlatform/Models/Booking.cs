@@ -17,13 +17,23 @@ namespace ShahbazWebsite_MVCPlatform.Models
         public int BookingId { get; set; }
         public int? UserId { get; set; }
         public string Category { get; set; }
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage="This date field cannot be empty")]
         public DateTime? StartDate { get; set; }
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //[Required(ErrorMessage="This date field cannot be empty")]
         public DateTime? EndDate { get; set; }
+
         public string TimeFrom { get; set; }
         public string TimeTo { get; set; }
+
+        [StringLength(25, MinimumLength = 0)]
         public string BookingDetail { get; set; }
+
         public string Status { get; set; }
 
         public User User { get; set; }
