@@ -76,9 +76,24 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.BookingDetail)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
+
+                @{
+                if (item.Status == "Pending" || item.Status == "pending")
+                {
+                        <td style="color: green">
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                }
+                else
+                {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+
+                }
+                }
+
+
                 <td>
                     @Html.DisplayFor(modelItem => item.User.UserId)
                 </td>

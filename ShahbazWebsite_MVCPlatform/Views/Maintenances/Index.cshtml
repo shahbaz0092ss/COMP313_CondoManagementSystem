@@ -64,9 +64,24 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.MaintenanceDetail)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
+
+                @{
+                if (item.Status == "Pending" || item.Status == "pending"
+                    item.Status == "Open" || item.Status == "open" )
+                {
+                    <td style="color: green">
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+
+                }
+                }
+
                 <td>
                     @Html.DisplayFor(modelItem => item.DollarAmount)
                 </td>
