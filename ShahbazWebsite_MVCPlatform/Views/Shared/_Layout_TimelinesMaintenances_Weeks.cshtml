@@ -61,25 +61,24 @@ $(document).ready(function () {
 
                 eventRender: function (event, element, view) {
 
-                    if (event.type == "Parking" || event.type == "parking"
-                        || event.type == "Guest Parking"
-                        || event.type == "guest parking") {
+                    if (event.type == "Repair" || event.type == "repair") {
 
                         $(element).find('.fc-content').prepend("&nbsp;")
-                            .prepend('<img src="/images/parking.png" width="22" height="22" />')
+                            .prepend('<img src="/images/repair.png" width="25" height="25" />')
                             .prepend("&nbsp; &nbsp;");
                     }
 
-                    if (event.type == "Party Hall" || event.type == "party hall") {
 
+                    if (event.type == "Emergency" || event.type == "emergency") {
 
                         $(element).find('.fc-content').prepend("&nbsp;")
-                            .prepend('<img src="/images/music.png" width="20" height="20" />')
-                            .prepend('<img src="/images/partyhall.png" width="20" height="20" />')
+                            .prepend('<img src="/images/emergency.png" width="25" height="25" />')
                             .prepend("&nbsp; &nbsp;");
                     }
 
-                    if (event.status == "Approved" || event.status == "approved") {
+                    if (event.status == "Closed" || event.status == "closed"
+                        || event.status == "Completed"
+                        || event.status == "completed") {
 
                         $(element).find('.fc-content').prepend("&nbsp; &nbsp;");
 
@@ -88,8 +87,6 @@ $(document).ready(function () {
 
                     }
 
-
-
                 },
 
                 eventSources: [
@@ -97,7 +94,7 @@ $(document).ready(function () {
                     {
 
                         // JSON data feed link
-                        url: '/Timelines/TimelinesBookings_JSON'
+                        url: 'TimelinesMaintenances_JSON'
 
                         // Note: no "~" in url, we are in JQuery world
                     }

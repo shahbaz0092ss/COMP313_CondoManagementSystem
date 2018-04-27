@@ -125,7 +125,8 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
 
         
         // Return JSON: Maintenance data 
-        public JsonResult TimelinesMaintenances_Months_JSON()
+        // + Multi-usage
+        public JsonResult TimelinesMaintenances_JSON()
         {
 
                 // Returning this list of model type to view (in our case, the layout)
@@ -211,7 +212,7 @@ namespace ShahbazWebsite_MVCPlatform.Controllers
         }
 
          // 
-        public IActionResult TimelinesMaintenances_Week()
+        public IActionResult TimelinesMaintenances_Weeks()
         {
             return View();
         }
